@@ -1,2 +1,0 @@
-# jet-coaster-voucher
-Coaster
