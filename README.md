@@ -1,43 +1,18 @@
-# Astro Starter Kit: Minimal
+# Coaster Reservation - Production-ready repository
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+内容:
+- Astro + Svelte frontend
+- Firebase Functions (TypeScript) backend: allocateTickets (callable), verifyAndUseTicket (HTTP), staff callables
+- Firestore as primary datastore
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+速習:
+1. npm install
+2. cd functions && npm install
+3. Set functions secret:
+   firebase functions:secrets:set TICKET_HMAC_SECRET --data="your_secret"
+4. firebase use --add
+5. firebase emulators:start --only firestore,functions
+6. npm run dev
+7. Build & deploy:
+   npm run build
+   firebase deploy --only functions,hosting,firestore:rules
